@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SinglePageInfo">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_height="400dp"
+        android:src="@drawable/black_forest" />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_height="wrap_content"
+        android:text="@string/black_forest_clair" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:textSize="30sp"
+        android:layout_height="wrap_content"
+        android:text="@string/price_8" />
+
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:backgroundTint="@color/gray"
+        android:layout_margin="15dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="@string/available_5" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:textSize="25sp"
+        android:text="@string/more_information" />
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:text="@string/rate" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:text="@string/recommends" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="129dp" />
+
+</LinearLayout>
