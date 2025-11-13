@@ -1,19 +1,23 @@
-package com.seminar.final_project_mob_dev;
+package com.example.peacefull_dessert_mob_dev;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ListOfDesserts#newInstance} factory method to
+ * Use the {@link DessertPageFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ListOfDesserts extends Fragment {
+public class DessertPageFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +28,7 @@ public class ListOfDesserts extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ListOfDesserts() {
+    public DessertPageFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +38,11 @@ public class ListOfDesserts extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ListOfDesserts.
+     * @return A new instance of fragment DessertPageFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ListOfDesserts newInstance(String param1, String param2) {
-        ListOfDesserts fragment = new ListOfDesserts();
+    public static DessertPageFragment newInstance(String param1, String param2) {
+        DessertPageFragment fragment = new DessertPageFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -53,12 +57,28 @@ public class ListOfDesserts extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_of_desserts, container, false);
+        return inflater.inflate(R.layout.fragment_dessert_page, container, false);
+    }
+
+    ImageButton backButton;
+    @Override
+    public void  onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        backButton = view.findViewById(R.id.imageButton2);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().replace(R.layout.fragment_home, new HomeFragment()).commit();
+            }
+        });
+
     }
 }

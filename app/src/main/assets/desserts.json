@@ -10,9 +10,9 @@
     "recommend": "Recommended"
   },
   {
-    "image": "@drawable/black_forest",
-    "name": "Black Forest Éclair",
-    "price": "8$",
+    "image": "@drawable/banyk",
+    "name": "Banyk",
+    "price": "10$",
     "quantity": "Available: 2",
     "description": "",
     "rate": "★★★★☆",

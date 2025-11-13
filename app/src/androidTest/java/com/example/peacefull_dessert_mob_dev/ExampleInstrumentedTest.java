@@ -1,4 +1,4 @@
-package com.seminar.final_project_mob_dev;
+package com.example.peacefull_dessert_mob_dev;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.seminar.final_project_mob_dev", appContext.getPackageName());
+        assertEquals("com.example.peacefull_dessert_mob_dev", appContext.getPackageName());
     }
 }

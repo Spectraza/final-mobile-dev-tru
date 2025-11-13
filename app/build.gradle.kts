@@ -3,11 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "com.seminar.final_project_mob_dev"
-    compileSdk = 36
+    namespace = "com.example.peacefull_dessert_mob_dev"
+    compileSdk {
+        version = release(36)
+    }
 
     defaultConfig {
-        applicationId = "com.seminar.final_project_mob_dev"
+        applicationId = "com.example.peacefull_dessert_mob_dev"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
@@ -32,15 +34,15 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.recyclerview)
     implementation(libs.viewpager2)
     implementation(libs.cardview)
     implementation(libs.gson)
+    implementation(libs.recyclerview)
+    implementation(libs.gridlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

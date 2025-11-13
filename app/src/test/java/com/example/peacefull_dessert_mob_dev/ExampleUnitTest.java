@@ -1,4 +1,4 @@
-package com.seminar.final_project_mob_dev;
+package com.example.peacefull_dessert_mob_dev;
 
 import org.junit.Test;
 

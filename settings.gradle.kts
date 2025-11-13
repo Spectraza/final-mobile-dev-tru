@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "final-project-mob-dev"
+rootProject.name = "peacefull-dessert-mob-dev"
 include(":app")
  
