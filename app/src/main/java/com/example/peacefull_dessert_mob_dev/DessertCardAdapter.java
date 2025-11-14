@@ -46,24 +46,21 @@ public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.
         holder.dessert_price.setText(dessert.getPrice());
         holder.brief_description.setText(dessert.getBriefDescription());
         holder.dessert_image.setImageResource(dessert.getImageResourceId());
-        holder.more_info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DessertData dessertData = dessertDataMap.get(dessert.getName());
-                if (dessertData == null){
-                    Toast.makeText(context, "The dessert" + dessert.getName() + " not found", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Intent intent = new Intent(context, DessertPageFragment.class);
-                intent.putExtra("image", dessertData.getImage());
-                intent.putExtra("dessert_name", dessertData.getName());
-                intent.putExtra("price", dessertData.getPrice());
-                intent.putExtra("quantity", dessertData.getQuantity());
-                intent.putExtra("description", dessertData.getDescription());
-                intent.putExtra("rate", dessertData.getRate());
-                context.startActivity(intent);
-                Toast.makeText(context, "The dessert" + dessert.getName() + " clicked", Toast.LENGTH_SHORT).show();
+        holder.more_info.setOnClickListener(v -> {
+            DessertData dessertData = dessertDataMap.get(dessert.getName());
+            if (dessertData == null){
+                Toast.makeText(context, "The dessert" + dessert.getName() + " not found", Toast.LENGTH_SHORT).show();
+                return;
             }
+            Intent intent = new Intent(context, DessertPageFragment.class);
+            intent.putExtra("image", dessertData.getImage());
+            intent.putExtra("dessert_name", dessertData.getName());
+            intent.putExtra("price", dessertData.getPrice());
+            intent.putExtra("quantity", dessertData.getQuantity());
+            intent.putExtra("description", dessertData.getDescription());
+            intent.putExtra("rate", dessertData.getRate());
+            context.startActivity(intent);
+            Toast.makeText(context, "The dessert" + dessert.getName() + " clicked", Toast.LENGTH_SHORT).show();
         });
     }
 
