@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,13 +73,13 @@ public class DessertPageFragment extends Fragment {
     @Override
     public void  onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         backButton = view.findViewById(R.id.imageButton2);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction().replace(R.layout.fragment_home, new HomeFragment()).commit();
+                NavHostFragment.findNavController(DessertPageFragment.this).navigateUp();
             }
         });
-
     }
 }

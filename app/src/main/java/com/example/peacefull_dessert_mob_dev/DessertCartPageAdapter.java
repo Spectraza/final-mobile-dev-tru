@@ -54,7 +54,7 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
                     Toast.makeText(context, "The dessert" + dessert.getName() + " not found", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Intent intent = new Intent(context, DessertPageFragment.class);
+                Intent intent = new Intent(context, SinglePageDessert.class);
                 intent.putExtra("image", dessertData.getImage());
                 intent.putExtra("dessert_name", dessertData.getName());
                 intent.putExtra("price", dessertData.getPrice());
