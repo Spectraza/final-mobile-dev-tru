@@ -1,5 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
+
+
+
 }
 
 android {
@@ -43,7 +46,10 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.gridlayout)
     implementation(libs.material.v150)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }

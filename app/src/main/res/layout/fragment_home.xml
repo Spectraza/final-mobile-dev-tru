@@ -24,6 +24,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_cards"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_column="1"
