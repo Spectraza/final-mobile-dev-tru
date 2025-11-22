@@ -29,13 +29,15 @@
 
     <!--Account section-->
     <LinearLayout
+        android:id="@+id/clickBoxAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        android:clickable="true">
 
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/imageViewAccountDrawable"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_weight="2"
@@ -46,13 +48,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="5"
-            android:text="Account"
+            android:layout_weight="10"
+            android:text="@string/account"
             android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
 
     </LinearLayout>
@@ -64,26 +66,6 @@
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/textViewDarkMode"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="5"
-            android:text="Dark Mode"
-            android:textSize="20sp" />
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
-    </LinearLayout>
-
     <!--Line divider-->
     <View
         android:id="@+id/divider4"
@@ -92,23 +74,32 @@
         android:background="?android:attr/listDivider" />
 
     <LinearLayout
+        android:id="@+id/clickBoxPayment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/imageViewPaymentDrawable"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:src="@drawable/baseline_add_card_24" />
 
         <TextView
             android:id="@+id/textViewPaymentMethod"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="5"
-            android:text="Payment Method"
+            android:layout_weight="10"
+            android:text="@string/payment_method"
             android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
     </LinearLayout>
 
@@ -120,22 +111,31 @@
         android:background="?android:attr/listDivider" />
 
     <LinearLayout
+        android:id="@+id/clickBoxLanguage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/imageViewLanguageDrawable"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:src="@drawable/outline_language_24" />
 
         <TextView
             android:id="@+id/textViewLanguageSettings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="5"
-            android:text="Language"
+            android:layout_weight="10"
+            android:text="@string/language"
             android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
 
 
@@ -149,22 +149,31 @@
         android:background="?android:attr/listDivider" />
 
     <LinearLayout
+        android:id="@+id/clickBoxNotification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/imageViewNotificationDrawable"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:src="@drawable/outline_circle_notifications_24" />
 
         <TextView
             android:id="@+id/textViewNotifications"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="5"
-            android:text="Notifications"
+            android:layout_weight="10"
+            android:text="@string/notifications"
             android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
     </LinearLayout>
 
@@ -176,22 +185,31 @@
         android:background="?android:attr/listDivider" />
 
     <LinearLayout
+        android:id="@+id/clickBoxPrivacy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/imageViewPrivacyDrawable"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:src="@drawable/outline_admin_panel_settings_24" />
 
         <TextView
             android:id="@+id/textViewPrivacySettings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="5"
-            android:text="Privacy"
+            android:layout_weight="10"
+            android:text="@string/privacy"
             android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
     </LinearLayout>
 
@@ -203,22 +221,31 @@
         android:background="?android:attr/listDivider" />
 
     <LinearLayout
+        android:id="@+id/clickBoxSwitchAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:gravity="center"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/imageViewSwitchAccountDrawable"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:src="@drawable/outline_supervised_user_circle_24" />
 
         <TextView
             android:id="@+id/textViewSwitchAccounts"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="5"
-            android:text="Switch Accounts"
+            android:layout_weight="10"
+            android:text="@string/switch_accounts"
             android:textSize="20sp" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
     </LinearLayout>
 
@@ -230,17 +257,33 @@
         android:background="?android:attr/listDivider" />
 
     <LinearLayout
+        android:id="@+id/clickBoxLogout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:clickable="true">
+
+
+        <ImageView
+            android:id="@+id/imageViewLogOutDrawable"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:src="@drawable/outline_exit_to_app_24" />
 
         <TextView
             android:id="@+id/textViewLogOut"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_weight="5"
-            android:text="Log Out"
+            android:layout_weight="10"
+            android:text="@string/log_out"
             android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
     </LinearLayout>
 
     <!--Line divider-->
