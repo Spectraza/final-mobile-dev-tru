@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,10 +15,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.ViewHolder> {
+public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.ViewHolder> implements Filterable {
 
 
     private final Context context;
@@ -57,7 +60,7 @@ public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.
                 }
                 Intent intent = new Intent(context, SinglePageDessert.class);
                 intent.putExtra("image", dessertData.getImage());
-                intent.putExtra("dessert_name", dessertData.getName());
+                intent.putExtra("name", dessertData.getName());
                 intent.putExtra("price", dessertData.getPrice());
                 intent.putExtra("quantity", dessertData.getQuantity());
                 intent.putExtra("description", dessertData.getDescription());
@@ -71,8 +74,49 @@ public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.
         public int getItemCount () {
             return dessertList.size();
         }
+    private final Filter dessertFilter = new Filter() {
 
-        public class ViewHolder extends RecyclerView.ViewHolder {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Dessert> filteredList = new ArrayList<>();
+
+            // If the search query is empty, show the full list
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(dessertList);
+            } else {
+                // Otherwise, filter the full list
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (Dessert dessert : dessertList) {
+                    // Filter by dessert name (you can add more fields)
+                    if (dessert.getName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(dessert);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            results.count = filteredList.size();
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            dessertList.clear();
+            if (results.values != null) {
+                dessertList.addAll((List<Dessert>) results.values);
+            }
+            notifyDataSetChanged();
+        }
+    };
+
+    @Override
+    public Filter getFilter() {
+        return null;
+    }
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
             Button more_info, add_to_cart;
             ImageView dessert_image;
@@ -88,4 +132,5 @@ public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.
                 brief_description = itemView.findViewById(R.id.textView10);
             }
         }
+
     }

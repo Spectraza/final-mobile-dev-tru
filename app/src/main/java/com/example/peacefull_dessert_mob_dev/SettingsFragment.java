@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 public class SettingsFragment extends Fragment {
     LinearLayout account, paymentMethod, language, notification, privacy, switchAccount, logOut;
-    Switch darkMode;
+//    Switch darkMode;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -21,7 +21,6 @@ public class SettingsFragment extends Fragment {
 
         // initialize all variables through view id
         account = view.findViewById(R.id.clickBoxAccount);
-        darkMode = view.findViewById(R.id.switchDarkMode);
         paymentMethod = view.findViewById(R.id.clickBoxPayment);
         language = view.findViewById(R.id.clickBoxLanguage);
         notification = view.findViewById(R.id.clickBoxNotification);
@@ -36,12 +35,12 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-        darkMode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // If toggled switch set all page backgrounds to dark and text to cream or white
-            }
-        });
+//        darkMode.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // If toggled switch set all page backgrounds to dark and text to cream or white
+//            }
+//        });
 
         paymentMethod.setOnClickListener(new View.OnClickListener() {
             @Override

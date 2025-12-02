@@ -1,24 +1,26 @@
 package com.example.peacefull_dessert_mob_dev;
 
 import android.os.Bundle;
-import android.view.Menu;
+
+import android.widget.SearchView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 import androidx.fragment.app.Fragment;
 
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
 
 public class HomeActivity extends AppCompatActivity {
-    ViewPager2 viewPager2;
+    //    ViewPager2 viewPager2;
+    SearchView searchView;
+    private Fragment activeFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,57 +29,86 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
 
 
-        viewPager2 = findViewById(R.id.view_pager);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        searchView = findViewById(R.id.search_view);
+        if (savedInstanceState == null) {
+            loadFragment(new HomeFragment(), "Home");
 
 
-//
-        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(this);
-        viewPager2.setAdapter(viewPageAdapter);
+        }
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
+            Fragment selectedFragment = null;
+            String tag = "";
 
             if (itemId == R.id.item_1) {
-                viewPager2.setCurrentItem(0);
+                selectedFragment = new HomeFragment();
+                tag = "Home";
             } else if (itemId == R.id.item_2) {
-                viewPager2.setCurrentItem(1);
+                selectedFragment = new CartFragment();
+                tag = "Cart";
             } else if (itemId == R.id.item_3) {
-                viewPager2.setCurrentItem(2);
+                selectedFragment = new FormsFragment();
+                tag = "Forms";
             } else if (itemId == R.id.item_4) {
-                viewPager2.setCurrentItem(3);
+                selectedFragment = new SettingsFragment();
+                tag = "Settings";
+            }
+
+            if (selectedFragment != null) {
+                loadFragment(selectedFragment, tag);
             }
             return true;
         });
+        setupSearchView();
+    }
 
-
-//        String[] TAB_TITLES = {"Home", "Cart", "Forms", "Settings"};
-//        TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> {
-//            tab.setText(TAB_TITLES[position]);
-//        });
-//        tabLayoutMediator.attach();
-
-
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+    private void setupSearchView() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                switch (position) {
-                    case 0:
-                        bottomNavigationView.getMenu().findItem(R.id.item_1);
-                        break;
-                    case 1:
-                        bottomNavigationView.getMenu().findItem(R.id.item_2);
-                        break;
-                    case 2:
-                        bottomNavigationView.getMenu().findItem(R.id.item_3);
-                        break;
-                    case 3:
-                        bottomNavigationView.getMenu().findItem(R.id.item_4);
-                }
+            public boolean onQueryTextSubmit(String query) {
+                passQueryToFragment(query);
+                return false;
+
             }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                passQueryToFragment(newText);
+                return true;
+            }
+
+
         });
 
+    }
+
+    private void loadFragment(Fragment fragment, String tag) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+
+        if (activeFragment != null) {
+            transaction.hide(activeFragment);
+        }
+
+        Fragment existingFragment = fm.findFragmentByTag(tag);
+        if (existingFragment == null) {
+            transaction.add(R.id.fragment_container, fragment, tag);
+            activeFragment = fragment;
+        } else {
+            transaction.show(existingFragment);
+            activeFragment = existingFragment;
+        }
+
+        transaction.commit();
+    }
+
+
+    private void passQueryToFragment(String query) {
+        if (activeFragment instanceof Searchable) {
+            ((Searchable) activeFragment).onSearch(query);
+        }
     }
 }
 

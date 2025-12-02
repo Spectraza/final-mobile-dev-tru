@@ -19,7 +19,11 @@ import java.util.ArrayList;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements Searchable {
+    ArrayList<Dessert> dessertList;
+    RecyclerView dessert_list_card_input;
+
+    DessertCardAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,15 +69,16 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView dessert_list_card_input = view.findViewById(R.id.recycler_view_cards);
+         dessert_list_card_input = view.findViewById(R.id.recycler_view_cards);
 
-        ArrayList<Dessert> dessertList = new ArrayList<>();
+        dessertList = new ArrayList<>();
         dessertList.add(new Dessert("Caramel Eclaire", "8$", "Delicious caramel-flavored eclair topped with caramel glaze.", R.drawable.caramel_eclaire));
         dessertList.add(new Dessert("Black Forest Éclair", "5$", "Delicious caramel-flavored eclair topped with caramel glaze.", R.drawable.black_forest));
         dessertList.add(new Dessert("Banyk", "5$", "Delicious caramel-flavored eclair topped with caramel glaze.", R.drawable.banyk));
@@ -98,7 +103,7 @@ public class HomeFragment extends Fragment {
         dessertList.add(new Dessert("White Hot Chocolate", "5$", "Delicious caramel-flavored eclair topped with caramel glaze.", R.drawable.white_hot_chocolate));
         dessertList.add(new Dessert("White Strawberry Brownie", "5$", "Delicious caramel-flavored eclair topped with caramel glaze.", R.drawable.white_strawberry_brownie));
 
-        DessertCardAdapter adapter = new DessertCardAdapter(requireContext(), dessertList);
+        adapter = new DessertCardAdapter(requireContext(), dessertList);
         dessert_list_card_input.setAdapter(adapter);
 
         int numberOfColumns = 2;
@@ -106,10 +111,13 @@ public class HomeFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), numberOfColumns);
         dessert_list_card_input.setLayoutManager(gridLayoutManager);
 
-
     }
-
-
+    @Override
+    public void onSearch(String query) {
+        if (adapter != null) {
+            adapter.getFilter().filter(query);
+        }
+    }
 
 
 }

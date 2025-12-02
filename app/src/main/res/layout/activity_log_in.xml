@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
+        android:text="@string/log_in"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -23,7 +23,7 @@
         android:layout_height="50dp"
         android:ems="10"
         android:inputType="text"
-        android:hint="Email"
+        android:hint="@string/email"
         android:layout_marginTop="25dp"/>
 
     <EditText
@@ -31,22 +31,23 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:inputType="text"
-        android:hint="Password"
-        android:layout_marginTop="10dp"/>
+        android:hint="@string/password"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/button"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_marginTop="10dp"/>
+        android:text="@string/log_in"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#4b86b4"/>
 
     <TextView
         android:id="@+id/textViewNoAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No account?"
+        android:text="@string/no_account"
         android:textSize="20sp"
         android:layout_marginTop="10dp"/>
 
@@ -56,7 +57,9 @@
         android:layout_height="48dp"
         android:clickable="true"
         android:gravity="center"
-        android:text="Create an account"
-        android:textSize="20sp" />
+        android:text="@string/create_an_account"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:textColor="@color/beau_blue"/>
 
 </LinearLayout>
