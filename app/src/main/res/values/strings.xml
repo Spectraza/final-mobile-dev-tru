@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment1">Home Page</string>
     <string name="hello_blank_fragment2">Cart</string>
-    <string name="hello_blank_fragment3">Forms</string>
+    <string name="hello_blank_fragment3">Form Page</string>
     <string name="hello_blank_fragment4">Settings</string>
     <string name="hello_blank_fragment5">Hello blank fragment</string>
     <string name="home">Home</string>
@@ -27,4 +27,19 @@
     <string name="payment_method">Payment Method</string>
     <string name="account">Account</string>
     <string name="log_out">Log out</string>
+    <string name="form_for_orders">Form for Orders</string>
+    <string name="what_would_you_like_to_order">What would you like to order?</string>
+    <string name="submit">Submit</string>
+    <string name="street_address">Street Address</string>
+    <string name="type_here_everything_we_need_to_know">Type here everything we need to know</string>
+    <string name="do_you_have_allergies">Do you have allergies?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="name_of_the_order">Name of the Order</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="no_account">No account?</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="more_info">More Info</string>
+    <string name="purchase">Purchase</string>
 </resources>

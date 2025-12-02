@@ -8,15 +8,14 @@
     android:orientation="vertical"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:text="@string/hello_blank_fragment1"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/hello_blank_fragment1"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold" />-->
 
     <ScrollView
         android:layout_width="match_parent"

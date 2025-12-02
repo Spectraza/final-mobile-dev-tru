@@ -2,12 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="#FFFFFF">
+    android:fillViewport="true">
 
     <LinearLayout
         android:orientation="vertical"
-        android:padding="40dp"
+        android:padding="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal">
@@ -16,7 +15,6 @@
             android:text="Create a new account"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="#333333"
             android:layout_marginBottom="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -24,7 +22,6 @@
         <EditText
             android:id="@+id/etLastName"
             android:hint="Last Name"
-            android:background="@android:drawable/edit_text"
             android:padding="12dp"
             android:layout_marginBottom="12dp"
             android:layout_width="match_parent"
@@ -33,7 +30,6 @@
         <EditText
             android:id="@+id/etUsername"
             android:hint="Preferred Username"
-            android:background="@android:drawable/edit_text"
             android:padding="12dp"
             android:layout_marginBottom="12dp"
             android:layout_width="match_parent"
@@ -43,7 +39,6 @@
             android:id="@+id/etEmail"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:background="@android:drawable/edit_text"
             android:padding="12dp"
             android:layout_marginBottom="12dp"
             android:layout_width="match_parent"
@@ -53,7 +48,6 @@
             android:id="@+id/etPassword"
             android:hint="Create Password"
             android:inputType="textPassword"
-            android:background="@android:drawable/edit_text"
             android:padding="12dp"
             android:layout_marginBottom="12dp"
             android:layout_width="match_parent"
@@ -63,7 +57,6 @@
             android:id="@+id/etConfirm"
             android:hint="Confirm Password"
             android:inputType="textPassword"
-            android:background="@android:drawable/edit_text"
             android:padding="12dp"
             android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
@@ -78,9 +71,7 @@
             android:layout_marginBottom="24dp"
             android:backgroundTint="#4b86b4"
             android:padding="10dp"
-            android:text="Create an account"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            android:text="Create an account" />
 
     </LinearLayout>
 </ScrollView>
