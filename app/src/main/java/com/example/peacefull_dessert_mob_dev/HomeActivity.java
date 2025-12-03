@@ -14,7 +14,16 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+/**
+ * Home Activity class including the bottom navigation bar and search view
+ *
+ * Search view to be implemented:
+ * - Need to filter key dessert names
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 
 public class HomeActivity extends AppCompatActivity {
     //    ViewPager2 viewPager2;

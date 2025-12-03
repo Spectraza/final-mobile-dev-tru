@@ -6,7 +6,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-
+/**
+ * ViewPager adapter
+ *
+ * Not sure if this is still implemented need to ask Val
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class ViewPageAdapter extends FragmentStateAdapter {
     public ViewPageAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);

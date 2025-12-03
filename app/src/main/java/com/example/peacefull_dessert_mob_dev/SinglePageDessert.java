@@ -11,7 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+/**
+ * Single Dessert information page displaying inflated view of image, description, price, etc
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class SinglePageDessert extends AppCompatActivity {
     TextView name, price, description, quantity, rate;
     ImageView image;

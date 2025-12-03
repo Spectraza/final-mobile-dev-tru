@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Description: Cart Fragment xml layout featuring a Recycler View
+Notes: N/A
+Author: Valeriia Savych
+Documentor: Rion Miyazaki-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CartFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-
 
     <ScrollView
         android:layout_width="match_parent"
