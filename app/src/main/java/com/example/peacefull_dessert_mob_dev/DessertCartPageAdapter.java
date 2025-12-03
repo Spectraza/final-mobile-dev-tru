@@ -16,7 +16,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Cart recycler view adapter class for displaying dessert added to customers cart
+ * for checkout
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPageAdapter.ViewHolder> {
     private final Context context;
     private final List<Dessert> dessertList;

@@ -9,7 +9,14 @@ import android.view.ViewGroup;
 import android.widget.*;
 import androidx.fragment.app.Fragment;
 
-
+/**
+ * Settings fragment with variables initialized
+ * Needs further implementation
+ *
+ * @author Rion Miyazaki
+ * @since 2025-10-16
+ * @documenter Rion Miyazaki
+ */
 public class SettingsFragment extends Fragment {
     LinearLayout account, paymentMethod, language, notification, privacy, switchAccount, logOut;
 //    Switch darkMode;

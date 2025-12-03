@@ -14,7 +14,16 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
+/**
+ * Main Activity class with user login and create account/sign up textView
+ * onClick textView sends user to Sign up Activity
+ *
+ * Possibly implement shared preferences onto shared preference file
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class MainActivity extends AppCompatActivity {
 
     Button login;

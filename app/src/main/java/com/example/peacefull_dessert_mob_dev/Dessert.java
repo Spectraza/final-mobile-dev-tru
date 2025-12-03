@@ -1,5 +1,15 @@
 package com.example.peacefull_dessert_mob_dev;
-
+/**
+ * Dessert object model class for defining all needed dessert information
+ * to be included in every dessert
+ * Each dessert has a name, price, description, and image
+ *
+ * !!Check Dessert Data.java class and resolve confusion!!
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class Dessert {
     private String name;
     private String price;

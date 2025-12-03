@@ -18,7 +18,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Dessert card adapter class
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.ViewHolder> implements Filterable {
 
 
