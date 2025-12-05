@@ -96,6 +96,7 @@ public class CartFragment extends Fragment implements CartUpdateListener {
 
     private void setupRecyclerView() {
         adapter = new DessertCartPageAdapter(getContext(), new ArrayList<>());
+        adapter.setCartUpdateListener(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         dessert_list_cart_input.setLayoutManager(linearLayoutManager);

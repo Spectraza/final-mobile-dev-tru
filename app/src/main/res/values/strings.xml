@@ -51,4 +51,5 @@
     <string name="empty_cart">Empty Cart</string>
     <string name="_5_99">$5.99</string>
     <string name="brief_description_of_the_dessert">Brief description of the dessert</string>
+    <string name="back_arrow">back arrow</string>
 </resources>

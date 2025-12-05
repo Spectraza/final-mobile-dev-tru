@@ -46,6 +46,8 @@ public class FormsFragment extends Fragment {
         EditText allergiesEditText = view.findViewById(R.id.editTextTextMultiLine);
         EditText addressEditText = view.findViewById(R.id.editTextTextPostalAddress);
         RadioButton radioButton = view.findViewById(R.id.radioButton);
+        RadioButton radioButton2 = view.findViewById(R.id.radioButton2);
+
 
 
 
@@ -54,7 +56,7 @@ public class FormsFragment extends Fragment {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nameEditText.getText().toString().isEmpty() || allergiesEditText.getText().toString().isEmpty() || addressEditText.getText().toString().isEmpty() || !radioButton.isChecked()) {
+                if (nameEditText.getText().toString().isEmpty() || allergiesEditText.getText().toString().isEmpty() || addressEditText.getText().toString().isEmpty() || !radioButton.isChecked() && !radioButton2.isChecked()) {
                     Toast.makeText(getActivity(), "Please fill out everything", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -62,6 +64,8 @@ public class FormsFragment extends Fragment {
                 nameEditText.setText("");
                 allergiesEditText.setText("");
                 addressEditText.setText("");
+                radioButton.setChecked(false);
+                radioButton2.setChecked(false);
             }
 
         });

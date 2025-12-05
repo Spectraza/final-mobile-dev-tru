@@ -17,13 +17,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 import java.util.Map;
+
 /**
  * Cart recycler view adapter class for displaying dessert added to customers cart
  * for checkout
  *
  * @author Valeriia Savych
- * @since 2025
  * @documenter Rion Miyazaki
+ * @since 2025
  */
 public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPageAdapter.ViewHolder> {
     private final Context context;
@@ -31,12 +32,20 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
 
     private final Map<String, DessertData> dessertDataMap;
 
+    private CartUpdateListener cartUpdateListener;
+
+
 
     public DessertCartPageAdapter(Context context, List<Dessert> dessertList) {
         this.context = context;
         this.dessertList = dessertList;
         this.dessertDataMap = DessertDataLoader.loadDesserts(context);
     }
+
+    public void setCartUpdateListener(CartUpdateListener listener) {
+        this.cartUpdateListener = listener;
+    }
+
 
 
     @NonNull
@@ -66,6 +75,11 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
                     cartManager.removeItemFromCart(dessertName);
                     dessertList.remove(currentPosition);
                     notifyItemRemoved(currentPosition);
+
+                    if(dessertList.isEmpty() && cartUpdateListener != null){
+                        cartUpdateListener.onCartUpdated();
+                    }
+
                     Toast.makeText(context, "The dessert" + dessert.getName() + " removed", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -96,7 +110,16 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
         holder.purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "The dessert" + dessert.getName() + " purchased", Toast.LENGTH_SHORT).show();
+                int currentPosition = holder.getAdapterPosition();
+                if (currentPosition != RecyclerView.NO_POSITION) {
+                    Dessert dessertRemove = dessertList.get(currentPosition);
+                    String dessertName = dessertRemove.getName();
+                    CartManager cartManager = CartManager.getInstance(context);
+                    cartManager.removeItemFromCart(dessertName);
+                    dessertList.remove(currentPosition);
+                    notifyItemRemoved(currentPosition);
+                    Toast.makeText(context, "The dessert" + dessert.getName() + " purchased", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
