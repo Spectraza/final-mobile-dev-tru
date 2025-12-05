@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Description: Single Dessert card xml layout for Cart Page Fragment recycler view
-Notes: Needs updated colour scheme
-Author: Valeriia Savych
+Notes: Color scheme updated
+Author: Valeriia Savych and Rion Miyazaki
 Documentor: Rion Miyazaki-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -103,7 +103,7 @@ Documentor: Rion Miyazaki-->
                             />
 
                         <Button
-                            android:id="@+id/button4"
+                            android:id="@+id/buttonDelete"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Delete" />

@@ -118,6 +118,11 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
                     cartManager.removeItemFromCart(dessertName);
                     dessertList.remove(currentPosition);
                     notifyItemRemoved(currentPosition);
+
+                    if(dessertList.isEmpty() && cartUpdateListener != null){
+                        cartUpdateListener.onCartUpdated();
+                    }
+
                     Toast.makeText(context, "The dessert" + dessert.getName() + " purchased", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -143,7 +148,7 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
             dessert_name = itemView.findViewById(R.id.textView2);
             dessert_price = itemView.findViewById(R.id.price);
             brief_description = itemView.findViewById(R.id.textView3);
-            remove = itemView.findViewById(R.id.button4);
+            remove = itemView.findViewById(R.id.buttonDelete);
 
         }
     }

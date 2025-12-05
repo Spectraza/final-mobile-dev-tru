@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Description: Settings Fragment xml layout
-Notes: Needs updated colour scheme??
+Notes: All good
 Author: Rion Miyazaki
 Documentor: Rion Miyazaki-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -142,13 +142,46 @@ Documentor: Rion Miyazaki-->
             android:layout_width="25dp"
             android:layout_height="25dp"
             app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
-
-
     </LinearLayout>
 
     <!--Line divider-->
     <View
         android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <LinearLayout
+        android:id="@+id/clickBoxMusic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/imageViewMusic"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            android:src="@drawable/baseline_music_off_24" />
+
+        <TextView
+            android:id="@+id/textViewMusic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="10"
+            android:text="@string/music"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
+    </LinearLayout>
+    <!--Line divider-->
+    <View
+        android:id="@+id/divider7"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
@@ -184,7 +217,7 @@ Documentor: Rion Miyazaki-->
 
     <!--Line divider-->
     <View
-        android:id="@+id/divider7"
+        android:id="@+id/divider8"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
@@ -220,7 +253,7 @@ Documentor: Rion Miyazaki-->
 
     <!--Line divider-->
     <View
-        android:id="@+id/divider8"
+        android:id="@+id/divider9"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
@@ -256,7 +289,7 @@ Documentor: Rion Miyazaki-->
 
     <!--Line divider-->
     <View
-        android:id="@+id/divider9"
+        android:id="@+id/divider10"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
@@ -293,7 +326,7 @@ Documentor: Rion Miyazaki-->
 
     <!--Line divider-->
     <View
-        android:id="@+id/divider10"
+        android:id="@+id/divider11"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />

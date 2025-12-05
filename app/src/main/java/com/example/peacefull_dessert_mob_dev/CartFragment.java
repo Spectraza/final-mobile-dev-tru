@@ -90,8 +90,6 @@ public class CartFragment extends Fragment implements CartUpdateListener {
             emptyCart.setVisibility(View.GONE);
             adapter.updateCart(dessertsInCart);
         }
-        adapter.updateCart(dessertsInCart);
-
     }
 
     private void setupRecyclerView() {
@@ -109,6 +107,8 @@ public class CartFragment extends Fragment implements CartUpdateListener {
         super.onResume();
         if (cartManager != null) {
             loadAndDisplayCartItems();
+        } else {
+            emptyCart.setVisibility(View.VISIBLE);
         }
     }
 

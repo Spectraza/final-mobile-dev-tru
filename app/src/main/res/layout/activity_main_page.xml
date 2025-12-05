@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Description: Home page Activity xml layout
-Notes: Needs updated colour scheme
+Notes: Color scheme updated
 Author: Valeriia Savych
 Documentor: Rion Miyazaki-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
