@@ -13,18 +13,9 @@ Documentor: Rion Miyazaki-->
     tools:context=".HomeFragment"
     android:background="@color/cream">
 
-<!--    <TextView-->
+<!--    <ScrollView-->
 <!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:gravity="center"-->
-<!--        android:text="@string/hello_blank_fragment1"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textStyle="bold" />-->
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<!--        android:layout_height="match_parent">-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_cards"
@@ -33,7 +24,7 @@ Documentor: Rion Miyazaki-->
             android:layout_height="wrap_content"
             app:layout_column="1"
             app:layout_row="1" />
-    </ScrollView>
+<!--    </ScrollView>-->
 
 
 </LinearLayout>

@@ -56,6 +56,13 @@ public class SignUpActivity extends AppCompatActivity {
             editor.putString("password", pass);
             editor.apply();
 
+            CartManager cartManager = CartManager.getInstance(this);
+            cartManager.clearCart();
+
+            SharedPreferences sessionPrefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor sessionEditor = sessionPrefs.edit();
+            sessionEditor.putBoolean("Logged Out", true);
+
             Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show();
 
             // Go to Login screen

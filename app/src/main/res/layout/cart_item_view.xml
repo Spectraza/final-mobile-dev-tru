@@ -7,17 +7,15 @@ Documentor: Rion Miyazaki-->
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/cream">
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:clickable="true"
@@ -56,16 +54,16 @@ Documentor: Rion Miyazaki-->
                             android:id="@+id/textView2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/caramel_eclaire"
+                            android:text="Black Forest Éclair"
                             android:textSize="17sp" />
 
                         <TextView
-                            android:id="@+id/textView4"
+                            android:id="@+id/price"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="17dp"
                             android:gravity="end"
-                            android:text="$5.99"
+                            android:text="@string/price"
                             android:textSize="15sp"
                             android:textStyle="bold" />
 
@@ -76,7 +74,7 @@ Documentor: Rion Miyazaki-->
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
-                        android:text="Delicious caramel-flavored eclair topped with caramel glaze."
+                        android:text="@string/brief_description_of_the_dessert"
                         android:textSize="15sp" />
 
                     <LinearLayout
@@ -89,19 +87,26 @@ Documentor: Rion Miyazaki-->
 
                         <Button
                             android:id="@+id/button"
-                            android:layout_width="138dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:text="@string/more_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="More"
                             android:backgroundTint="@color/strawberry"/>
+
 
                         <Button
                             android:id="@+id/button2"
-                            android:layout_width="128dp"
-                            android:layout_height="50dp"
+                            android:layout_width="76dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/purchase"
+                            android:text="Buy"
                             android:backgroundTint="@color/rose"/>
+                            />
+
+                        <Button
+                            android:id="@+id/button4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delete" />
                     </LinearLayout>
 
 
@@ -111,5 +116,5 @@ Documentor: Rion Miyazaki-->
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-    </ScrollView>
+
 </LinearLayout>
