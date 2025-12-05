@@ -52,7 +52,7 @@ public class AppMusic extends Service {
                 .build();
         startForeground(1001, notif);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.yay);
+        mediaPlayer = MediaPlayer.create(this, R.raw.undertalehome);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
         isPlaying = true;

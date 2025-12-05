@@ -17,17 +17,20 @@ import androidx.core.view.WindowInsetsCompat;
 /**
  * Main Activity class with user login and create account/sign up textView
  * onClick textView sends user to Sign up Activity
- *
+ * <p>
  * Possibly implement shared preferences onto shared preference file
  *
  * @author Valeriia Savych
- * @since 2025
  * @documenter Rion Miyazaki
+ * @since 2025
  */
 public class LogInActivity extends AppCompatActivity {
 
     Button login;
     TextView createAcc;
+
+    EditText email, password;
+
 
 //    EditText email, password;
 
@@ -43,8 +46,8 @@ public class LogInActivity extends AppCompatActivity {
         });
 
         login = findViewById(R.id.button);
-//        email = findViewById(R.id.editTextEmail);
-//        password = findViewById(R.id.editTextPassword);
+        email = findViewById(R.id.editTextEmail);
+        password = findViewById(R.id.editTextPassword);
 
         login.setOnClickListener(v1 -> {
             SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -59,8 +62,16 @@ public class LogInActivity extends AppCompatActivity {
                 editor.apply();
             }
 
+            if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
+                Toast.makeText(LogInActivity.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            
+            Toast.makeText(LogInActivity.this, "Logged in!", Toast.LENGTH_SHORT).show();
             Intent intent1 = new Intent(LogInActivity.this, HomeActivity.class);
             startActivity(intent1);
+
+
         });
         createAcc = findViewById(R.id.textViewCreateAccount);
         createAcc.setOnClickListener(v2 -> {

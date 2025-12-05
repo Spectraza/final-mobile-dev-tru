@@ -47,9 +47,13 @@ Button info, orders, back;
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(getContext(), HomeActivity.class);
-                startActivity(intent1);
+                requireActivity()
+                        .getSupportFragmentManager()
+                        .popBackStack();
             }
+//                Intent intent1 = new Intent(getContext(), HomeActivity.class);
+//                startActivity(intent1);
+
         });
 
         // Inflate the layout for this fragment
