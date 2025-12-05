@@ -19,15 +19,7 @@ Documentor: Rion Miyazaki-->
         android:clickable="true"
         android:iconifiedByDefault="false"
         android:queryHint="Search Desserts" />
-
-
-<!--    <androidx.viewpager2.widget.ViewPager2-->
-<!--        android:id="@+id/view_pager"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="1" />-->
-
-
+    
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -41,31 +33,6 @@ Documentor: Rion Miyazaki-->
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_navigation_menu" />
-    <!--    <com.google.android.material.tabs.TabLayout-->
-    <!--        android:id="@+id/tab_layout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content">-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="@string/home" />-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="@string/cart" />-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="@string/form" />-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="@string/settings" />-->
-    <!--    </com.google.android.material.tabs.TabLayout>-->
 
 
 </LinearLayout>

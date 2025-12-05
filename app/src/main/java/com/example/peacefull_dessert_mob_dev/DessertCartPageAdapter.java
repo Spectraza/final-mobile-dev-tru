@@ -1,5 +1,6 @@
 package com.example.peacefull_dessert_mob_dev;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -30,6 +31,7 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
 
     private final Map<String, DessertData> dessertDataMap;
 
+
     public DessertCartPageAdapter(Context context, List<Dessert> dessertList) {
         this.context = context;
         this.dessertList = dessertList;
@@ -47,12 +49,30 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
     @Override
     public void onBindViewHolder(@NonNull DessertCartPageAdapter.ViewHolder holder, int position) {
         Dessert dessert = dessertList.get(position);
-        holder.more_info.setText(dessert.getName());
         holder.dessert_name.setText(dessert.getName());
         holder.dessert_price.setText(dessert.getPrice());
         holder.brief_description.setText(dessert.getBriefDescription());
-        holder.more_info.setText("More Info");
-        holder.purchase.setText("Purchase");
+        holder.more_info.setText("More");
+        holder.purchase.setText("Buy");
+        holder.remove.setText("Delete");
+        holder.remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int currentPosition = holder.getAdapterPosition();
+                if (currentPosition != RecyclerView.NO_POSITION) {
+                    Dessert dessertRemove = dessertList.get(currentPosition);
+                    String dessertName = dessertRemove.getName();
+                    CartManager cartManager = CartManager.getInstance(context);
+                    cartManager.removeItemFromCart(dessertName);
+                    dessertList.remove(currentPosition);
+                    notifyItemRemoved(currentPosition);
+                    Toast.makeText(context, "The dessert" + dessert.getName() + " removed", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+
+        });
+        holder.dessert_image.setImageResource(dessert.getImageResourceId());
         holder.more_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,8 +99,6 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
                 Toast.makeText(context, "The dessert" + dessert.getName() + " purchased", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
 
@@ -90,7 +108,7 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        Button more_info, purchase;
+        Button more_info, purchase, remove;
         ImageView dessert_image;
         TextView dessert_name, dessert_price, brief_description;
 
@@ -100,9 +118,17 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
             purchase = itemView.findViewById(R.id.button2);
             dessert_image = itemView.findViewById(R.id.imageView2);
             dessert_name = itemView.findViewById(R.id.textView2);
-            dessert_price = itemView.findViewById(R.id.textView4);
+            dessert_price = itemView.findViewById(R.id.price);
             brief_description = itemView.findViewById(R.id.textView3);
+            remove = itemView.findViewById(R.id.button4);
 
         }
+    }
+
+
+    public void updateCart(List<Dessert> newDessertList) {
+        dessertList.clear();
+        dessertList.addAll(newDessertList);
+        notifyDataSetChanged();
     }
 }
