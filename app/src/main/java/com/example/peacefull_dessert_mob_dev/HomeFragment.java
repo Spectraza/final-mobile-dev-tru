@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment implements Searchable {
         dessertList.add(new Dessert("Lemon Raspberry Cake", "2.30$", "The refreshing Lemon Raspberry Cake.", R.drawable.lemon_raspberry_cake));
         dessertList.add(new Dessert("Oeey Gooey", "3$", "Our Oeey Gooey treat is a soft, rich, and ultra-melty dessert.", R.drawable.oeey_gooey));
         dessertList.add(new Dessert("Peach Lemonade", "4$", "Our Peach Lemonade is a refreshing drink.", R.drawable.peach_lemonade));
-        dessertList.add(new Dessert("Pomegranate Ginger Sparkler", "5$", "The Pomegranate Ginger Sparkler is a refreshing, fruity drink.", R.drawable.pomegrante_ginger_sparkler));
+        dessertList.add(new Dessert("Pomegranate Sparkler", "5$", "Pomegranate Ginger Sparkler is a refreshing, fruity drink.", R.drawable.pomegrante_ginger_sparkler));
         dessertList.add(new Dessert("Raspberry Millie Feuille", "3.30$", "The Raspberry Mille-Feuille. Sweet", R.drawable.raspberry_mille_feuille));
         dessertList.add(new Dessert("Strawberry Mille-Feuille", "6$", "The Strawberry Mille-Feuille. Sweet", R.drawable.strawberry_cake));
         dessertList.add(new Dessert("Chocolate Mille-Feuille", "5$", "The elegant pastry features layers of crisp puff pastry.", R.drawable.chocolate_mille_feuille));
@@ -115,7 +115,7 @@ public class HomeFragment extends Fragment implements Searchable {
         allDessertList.add(new Dessert("Lemon Raspberry Cake", "2.30$", "The refreshing Lemon Raspberry Cake.", R.drawable.lemon_raspberry_cake));
         allDessertList.add(new Dessert("Oeey Gooey", "3$", "Our Oeey Gooey treat is a soft, rich, and ultra-melty dessert.", R.drawable.oeey_gooey));
         allDessertList.add(new Dessert("Peach Lemonade", "4$", "Our Peach Lemonade is a refreshing drink.", R.drawable.peach_lemonade));
-        allDessertList.add(new Dessert("Pomegranate Ginger Sparkler", "5$", "The Pomegranate Ginger Sparkler is a refreshing, fruity drink.", R.drawable.pomegrante_ginger_sparkler));
+        allDessertList.add(new Dessert("Pomegranate Sparkler", "5$", "Pomegranate Ginger Sparkler is a refreshing, fruity drink.", R.drawable.pomegrante_ginger_sparkler));
         allDessertList.add(new Dessert("Raspberry Millie Feuille", "3.30$", "The Raspberry Mille-Feuille. Sweet", R.drawable.raspberry_mille_feuille));
         allDessertList.add(new Dessert("Strawberry Mille-Feuille", "6$", "The Strawberry Mille-Feuille. Sweet", R.drawable.strawberry_cake));
         allDessertList.add(new Dessert("Chocolate Mille-Feuille", "5$", "The elegant pastry features layers of crisp puff pastry.", R.drawable.chocolate_mille_feuille));
