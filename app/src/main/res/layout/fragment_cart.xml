@@ -8,7 +8,9 @@ Documentor: Rion Miyazaki-->
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CartFragment">
+    tools:context=".CartFragment"
+    android:background="@color/cream">
+
 
 
         <TextView

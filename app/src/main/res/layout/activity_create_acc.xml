@@ -6,14 +6,16 @@ Documentor: Rion Miyazaki-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:backgroundTint="@color/cream">
 
     <LinearLayout
         android:orientation="vertical"
         android:padding="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:backgroundTint="@color/cream">
 
         <TextView
             android:text="Create a new account"
@@ -73,7 +75,7 @@ Documentor: Rion Miyazaki-->
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="24dp"
-            android:backgroundTint="#4b86b4"
+            android:backgroundTint="@color/rose"
             android:padding="10dp"
             android:text="Create an account" />
 

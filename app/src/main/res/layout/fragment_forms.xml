@@ -9,7 +9,8 @@ Documentor: Rion Miyazaki-->
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FormsFragment">
+    tools:context=".FormsFragment"
+    android:background="@color/cream">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,7 +28,8 @@ Documentor: Rion Miyazaki-->
                 android:layout_margin="10dp"
                 android:clickable="true"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="4dp">
+                app:cardElevation="4dp"
+                android:backgroundTint="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -124,7 +126,8 @@ Documentor: Rion Miyazaki-->
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="@string/submit" />
+                        android:text="@string/submit"
+                        android:backgroundTint="@color/rose"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
