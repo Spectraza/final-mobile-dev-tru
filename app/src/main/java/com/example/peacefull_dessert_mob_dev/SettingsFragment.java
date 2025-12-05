@@ -1,5 +1,7 @@
 package com.example.peacefull_dessert_mob_dev;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +14,8 @@ import androidx.fragment.app.Fragment;
 
 public class SettingsFragment extends Fragment {
     LinearLayout account, paymentMethod, language, notification, privacy, switchAccount, logOut;
+
+
 //    Switch darkMode;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,6 +85,20 @@ public class SettingsFragment extends Fragment {
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                CartManager cartManager = CartManager.getInstance(requireContext());
+                cartManager.clearCart();
+
+                SharedPreferences sharedPreferences = requireContext().getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("Logged Out", true);
+                editor.apply();
+
+                Toast.makeText(requireContext(), "Logged Out", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(requireContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                requireActivity().finish();
+
                 // send toast message that user has been successfully logged out and send back to the log in page
             }
         });

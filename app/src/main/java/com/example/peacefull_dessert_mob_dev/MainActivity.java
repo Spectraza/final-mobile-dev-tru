@@ -1,6 +1,7 @@
 package com.example.peacefull_dessert_mob_dev;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,6 +33,18 @@ public class MainActivity extends AppCompatActivity {
         });
         login = findViewById(R.id.button);
         login.setOnClickListener(v1 -> {
+            SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+            boolean isLoggedOut = sharedPreferences.getBoolean("isLoggedOut", true);
+
+            if (isLoggedOut) {
+                CartManager cartManager = CartManager.getInstance(MainActivity.this);
+                cartManager.clearCart();
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("Logged Out", false);
+                editor.apply();
+            }
+
             Intent intent1 = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent1);
         });

@@ -2,6 +2,7 @@ package com.example.peacefull_dessert_mob_dev;
 
 import android.os.Bundle;
 
+import android.view.View;
 import android.widget.SearchView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,9 +18,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class HomeActivity extends AppCompatActivity {
-    //    ViewPager2 viewPager2;
     SearchView searchView;
     private Fragment activeFragment;
+
+    private CartFragment cartFragment;
 
 
     @Override
@@ -45,15 +47,19 @@ public class HomeActivity extends AppCompatActivity {
             if (itemId == R.id.item_1) {
                 selectedFragment = new HomeFragment();
                 tag = "Home";
+                searchView.setVisibility(View.VISIBLE);
             } else if (itemId == R.id.item_2) {
                 selectedFragment = new CartFragment();
                 tag = "Cart";
+                searchView.setVisibility(View.INVISIBLE);
             } else if (itemId == R.id.item_3) {
                 selectedFragment = new FormsFragment();
                 tag = "Forms";
+                searchView.setVisibility(View.INVISIBLE);
             } else if (itemId == R.id.item_4) {
                 selectedFragment = new SettingsFragment();
                 tag = "Settings";
+                searchView.setVisibility(View.INVISIBLE);
             }
 
             if (selectedFragment != null) {
@@ -96,9 +102,23 @@ public class HomeActivity extends AppCompatActivity {
         if (existingFragment == null) {
             transaction.add(R.id.fragment_container, fragment, tag);
             activeFragment = fragment;
+
+            if (fragment instanceof CartFragment) {
+                cartFragment = (CartFragment) fragment;
+            }
+            if (fragment instanceof HomeFragment) {
+                ((HomeFragment) fragment).setCartUpdateListener(cartFragment);
+            }
         } else {
             transaction.show(existingFragment);
             activeFragment = existingFragment;
+
+            if (existingFragment instanceof CartFragment) {
+                cartFragment = (CartFragment) existingFragment;
+            }
+            if (existingFragment instanceof HomeFragment) {
+                ((HomeFragment) existingFragment).setCartUpdateListener(cartFragment);
+            }
         }
 
         transaction.commit();

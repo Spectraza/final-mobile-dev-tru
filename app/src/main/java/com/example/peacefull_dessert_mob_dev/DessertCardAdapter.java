@@ -1,5 +1,6 @@
 package com.example.peacefull_dessert_mob_dev;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -24,13 +25,25 @@ public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.
 
     private final Context context;
     private final List<Dessert> dessertList;
+    private final List<Dessert> dessertListFull;
+
+    private final List<Dessert> dessertCartItems;
 
     private final Map<String, DessertData> dessertDataMap;
+    private CartUpdateListener cartUpdateListener;
+
+
 
     public DessertCardAdapter(Context context, List<Dessert> dessertList) {
         this.context = context;
         this.dessertList = dessertList;
         this.dessertDataMap = DessertDataLoader.loadDesserts(context);
+        this.dessertListFull = new ArrayList<>(dessertList);
+        this.dessertCartItems = new ArrayList<>(dessertList);
+    }
+
+    public void setCartUpdateListener(CartUpdateListener listener) {
+        this.cartUpdateListener = listener;
     }
 
 
@@ -66,9 +79,28 @@ public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.
                 intent.putExtra("description", dessertData.getDescription());
                 intent.putExtra("rate", dessertData.getRate());
                 context.startActivity(intent);
-                Toast.makeText(context, "The dessert" + dessert.getName() + " clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "The dessert '" + dessert.getName() + "' clicked", Toast.LENGTH_SHORT).show();
             }
         });
+        holder.add_to_cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String dessertName = dessert.getName();
+                CartManager cartManager = CartManager.getInstance(context);
+                cartManager.addItemToCart(dessertName);
+                cartManager.saveToCart(cartManager.getCartItems());
+                dessertCartItems.add(dessert);
+
+                if (cartUpdateListener != null) {
+                    cartUpdateListener.onCartUpdated();
+                }
+
+                notifyDataSetChanged();
+                Toast.makeText(context, "The dessert " + dessert.getName() + " added to cart", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
         @Override
         public int getItemCount () {
@@ -82,11 +114,11 @@ public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.
 
             // If the search query is empty, show the full list
             if (constraint == null || constraint.length() == 0) {
-                filteredList.addAll(dessertList);
+                filteredList.addAll(dessertListFull);
             } else {
                 // Otherwise, filter the full list
                 String filterPattern = constraint.toString().toLowerCase().trim();
-                for (Dessert dessert : dessertList) {
+                for (Dessert dessert : dessertListFull) {
                     // Filter by dessert name (you can add more fields)
                     if (dessert.getName().toLowerCase().contains(filterPattern)) {
                         filteredList.add(dessert);
@@ -100,6 +132,7 @@ public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.
             return results;
         }
 
+        @SuppressLint("NotifyDataSetChanged")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             dessertList.clear();
@@ -112,7 +145,7 @@ public class DessertCardAdapter extends RecyclerView.Adapter<DessertCardAdapter.
 
     @Override
     public Filter getFilter() {
-        return null;
+        return dessertFilter;
     }
 
 
