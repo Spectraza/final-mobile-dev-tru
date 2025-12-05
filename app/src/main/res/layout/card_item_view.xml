@@ -8,7 +8,8 @@ Documentor: Rion Miyazaki-->
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/cream">
 
     <androidx.cardview.widget.CardView
         android:layout_width="192dp"
@@ -16,7 +17,8 @@ Documentor: Rion Miyazaki-->
         android:layout_margin="8dp"
         android:clickable="true"
         app:cardCornerRadius="15dp"
-        app:cardElevation="4dp">
+        app:cardElevation="4dp"
+        android:backgroundTint="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -76,7 +78,8 @@ Documentor: Rion Miyazaki-->
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
-                android:text="@string/more_information" />
+                android:text="@string/more_information"
+                android:backgroundTint="@color/strawberry"/>
 
             <Button
                 android:id="@+id/button6"
@@ -85,7 +88,8 @@ Documentor: Rion Miyazaki-->
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="15dp"
-                android:text="@string/add_to_cart" />
+                android:text="@string/add_to_cart"
+                android:backgroundTint="@color/rose"/>
 
 
         </LinearLayout>

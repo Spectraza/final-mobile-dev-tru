@@ -12,7 +12,8 @@ Documentor: Rion Miyazaki-->
     android:layout_margin="20dp"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/cream">
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,7 +46,7 @@ Documentor: Rion Miyazaki-->
         android:layout_height="wrap_content"
         android:text="@string/log_in"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#4b86b4"/>
+        android:backgroundTint="@color/rose"/>
 
     <TextView
         android:id="@+id/textViewNoAccount"
@@ -64,6 +65,6 @@ Documentor: Rion Miyazaki-->
         android:text="@string/create_an_account"
         android:textSize="20sp"
         android:textStyle="italic"
-        android:textColor="@color/beau_blue"/>
+        android:textColor="@color/rose"/>
 
 </LinearLayout>

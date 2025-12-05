@@ -11,7 +11,8 @@ Documentor: Rion Miyazaki-->
     android:layout_height="match_parent"
     android:layout_margin="20dp"
     android:orientation="vertical"
-    tools:context=".SettingsFragment">
+    tools:context=".SettingsFragment"
+    android:backgroundTint="@color/toast">
 
     <!--Settings Title-->
     <TextView
