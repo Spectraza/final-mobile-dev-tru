@@ -16,24 +16,20 @@ Documentor: Rion Miyazaki-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="288dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/textViewUserProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="40dp"
+
             android:text="Your Profile"
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageViewPfp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:src="@drawable/defaultpfp" />
+
 
         <TextView
             android:id="@+id/textViewEmail"
@@ -44,6 +40,13 @@ Documentor: Rion Miyazaki-->
             android:visibility="gone"
             android:textSize="20sp"
             android:layout_marginTop="15dp"/>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center"
+            android:src="@drawable/account_circle_24" />
     </LinearLayout>
 
 
@@ -73,9 +76,10 @@ Documentor: Rion Miyazaki-->
             android:id="@+id/buttonBack"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
+            android:layout_gravity="center"
             android:text="Back"
-            android:layout_marginTop="100dp"/>
+            android:layout_marginTop="100dp"
+            android:backgroundTint="@color/dark_rose" />
     </LinearLayout>
 
 

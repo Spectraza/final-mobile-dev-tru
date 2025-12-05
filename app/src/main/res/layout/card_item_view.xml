@@ -52,6 +52,7 @@ Documentor: Rion Miyazaki-->
 
                     android:layout_weight="1"
                     android:text="@string/dessert_name"
+
                     android:textSize="15sp" />
 
                 <TextView

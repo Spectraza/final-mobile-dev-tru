@@ -21,6 +21,7 @@ Documentor: Rion Miyazaki-->
         android:layout_height="wrap_content"
         android:text="@string/hello_blank_fragment4"
         android:layout_gravity="center"
+
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -174,10 +175,6 @@ Documentor: Rion Miyazaki-->
             android:text="@string/music"
             android:textSize="20sp" />
 
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            app:srcCompat="@drawable/outline_arrow_forward_ios_24" />
     </LinearLayout>
     <!--Line divider-->
     <View
