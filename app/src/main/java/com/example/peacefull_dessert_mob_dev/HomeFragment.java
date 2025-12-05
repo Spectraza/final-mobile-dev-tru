@@ -16,6 +16,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * Home Fragment displaying recycler view of dessert cards
+ *
+ * Need to add dessert description and update any dummy text
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class HomeFragment extends Fragment implements Searchable {
     ArrayList<Dessert> dessertList;
     RecyclerView dessert_list_card_input;

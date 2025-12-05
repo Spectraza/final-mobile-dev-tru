@@ -1,5 +1,12 @@
 package com.example.peacefull_dessert_mob_dev;
-
+/**
+ * Not really sure what this class is and how it relates to Dessert.java class
+ * Object model??
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class DessertData {
     private String image;
     private String name;

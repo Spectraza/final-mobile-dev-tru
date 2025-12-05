@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Description: Cart Fragment xml layout featuring a Recycler View
+Notes: N/A
+Author: Valeriia Savych
+Documentor: Rion Miyazaki-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -31,6 +35,5 @@
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:visibility="gone"/>
-
 
 </LinearLayout>

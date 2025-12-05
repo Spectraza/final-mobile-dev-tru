@@ -14,7 +14,23 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 
+/**
+ * Empty forms fragment
+ *
+ * Things to implement:
+ * - Clear all form EditText boxes after clicking submit button
+ * - If possible implement shared preferences before the clear by
+ *   writing all user inputted text to a preferences file
+ *
+ * @author Rion Miyazaki
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class FormsFragment extends Fragment {
+
+    public FormsFragment() {
+        // Required empty public constructor
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

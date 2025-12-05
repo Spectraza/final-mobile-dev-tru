@@ -9,7 +9,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * Dessert Data Loader class for loading all created dessert information from json
+ * file to be used in adapter classes
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class DessertDataLoader {
     public static Map<String, DessertData> loadDesserts(Context context) {
         Map<String, DessertData> desserts = new HashMap<>();

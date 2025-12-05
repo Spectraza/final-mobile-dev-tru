@@ -16,6 +16,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Cart fragment for displaying items added to cart via dessert card
+ * "add to cart" button
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 
 public class CartFragment extends Fragment implements CartUpdateListener {
     private CartManager cartManager;

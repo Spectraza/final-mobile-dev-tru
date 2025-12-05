@@ -4,7 +4,15 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
-
+/**
+ * Sign up activity for user account creation
+ *
+ * May need shared preferences implementation
+ *
+ * @author Valeriia Savych
+ * @since 2025
+ * @documenter Rion Miyazaki
+ */
 public class SignUpActivity extends AppCompatActivity {
     EditText etLastName, etUsername, etEmail, etPassword, etConfirm;
     Button btnCreate;
