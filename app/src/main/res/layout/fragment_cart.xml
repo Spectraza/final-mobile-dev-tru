@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Description: Cart Fragment xml layout featuring a Recycler View
-Notes: N/A
+Notes: All good
 Author: Valeriia Savych
 Documentor: Rion Miyazaki-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,7 +32,7 @@ Documentor: Rion Miyazaki-->
         android:id="@+id/emptyCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/empty_cart"
+        android:text="Your cart is empty"
         android:textSize="20sp"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"

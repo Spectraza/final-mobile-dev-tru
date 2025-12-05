@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Description: Single Card item xml layout for Home Page Fragment recycler view
-Notes: Needs updated colour scheme
-Author: Valeriia Savych
+Notes: Color scheme updated
+    - Set all card height the same and added layout weight to text view
+    - Keeps buttons in the same spot on each card
+Author: Valeriia Savych and Rion Miyazaki
 Documentor: Rion Miyazaki-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -22,8 +24,9 @@ Documentor: Rion Miyazaki-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="405dp"
+            android:orientation="vertical"
+            >
 
 
             <ImageView
@@ -70,28 +73,35 @@ Documentor: Rion Miyazaki-->
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="A traditional Ukrainian pastry, similar to a pancake, often filled with cheese or fruit." />
+                android:text="A traditional Ukrainian pastry, similar to a pancake, often filled with cheese or fruit."
+                android:layout_weight="1"/>
 
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:text="@string/more_information"
-                android:backgroundTint="@color/strawberry"/>
-
-            <Button
-                android:id="@+id/button6"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="15dp"
-                android:text="@string/add_to_cart"
-                android:backgroundTint="@color/rose"/>
+                android:orientation="vertical"
+                android:layout_gravity="bottom">
 
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginHorizontal="15dp"
+                    android:backgroundTint="@color/strawberry"
+                    android:text="@string/more_information" />
 
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/rose"
+                    android:text="@string/add_to_cart" />
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

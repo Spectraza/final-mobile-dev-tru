@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Description: Account creation Activity xml layout
-Notes: Needs updated colour scheme
+Notes: Color Scheme updated
 Author: Rain Haque
 Documentor: Rion Miyazaki-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"

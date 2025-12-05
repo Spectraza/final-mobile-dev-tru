@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Description: Account Log in Activity xml layout
-Notes: Needs updated colour scheme
-Author: Valeriia Savych
+Notes: Color scheme updated along with button color
+    - Should not allow user to log in without edit text inputs
+Author: Valeriia Savych and Rion Miyazaki
 Documentor: Rion Miyazaki-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,7 +13,7 @@ Documentor: Rion Miyazaki-->
     android:layout_margin="20dp"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity"
+    tools:context=".LogInActivity"
     android:background="@color/cream">
 
     <TextView
@@ -23,7 +24,7 @@ Documentor: Rion Miyazaki-->
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextEmail"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -32,7 +33,7 @@ Documentor: Rion Miyazaki-->
         android:layout_marginTop="25dp"/>
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editTextPassword"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:ems="10"

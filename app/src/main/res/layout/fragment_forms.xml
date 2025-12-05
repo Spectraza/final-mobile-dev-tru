@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Description: Forms Fragment xml layout
 Notes: Needs updated colour scheme
-Author: Rain
+Author: Rain Haque and Rion Miyazaki
 Documentor: Rion Miyazaki-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

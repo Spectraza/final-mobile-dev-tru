@@ -4,17 +4,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 /**
  * Main Activity class with user login and create account/sign up textView
  * onClick textView sends user to Sign up Activity
@@ -25,10 +24,12 @@ import com.google.android.material.tabs.TabLayoutMediator;
  * @since 2025
  * @documenter Rion Miyazaki
  */
-public class MainActivity extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity {
 
     Button login;
     TextView createAcc;
+
+//    EditText email, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +41,17 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         login = findViewById(R.id.button);
+//        email = findViewById(R.id.editTextEmail);
+//        password = findViewById(R.id.editTextPassword);
+
         login.setOnClickListener(v1 -> {
             SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
             boolean isLoggedOut = sharedPreferences.getBoolean("isLoggedOut", true);
 
             if (isLoggedOut) {
-                CartManager cartManager = CartManager.getInstance(MainActivity.this);
+                CartManager cartManager = CartManager.getInstance(LogInActivity.this);
                 cartManager.clearCart();
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -54,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
                 editor.apply();
             }
 
-            Intent intent1 = new Intent(MainActivity.this, HomeActivity.class);
+            Intent intent1 = new Intent(LogInActivity.this, HomeActivity.class);
             startActivity(intent1);
         });
         createAcc = findViewById(R.id.textViewCreateAccount);
         createAcc.setOnClickListener(v2 -> {
-            Intent intent2 = new Intent(MainActivity.this, SignUpActivity.class);
+            Intent intent2 = new Intent(LogInActivity.this, SignUpActivity.class);
             startActivity(intent2);
         });
     }
