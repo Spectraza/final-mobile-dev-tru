@@ -96,6 +96,7 @@ public class DessertCartPageAdapter extends RecyclerView.Adapter<DessertCartPage
                     return;
                 }
                 Intent intent = new Intent(context, SinglePageDessert.class);
+                intent.putExtra("name", dessertData.getName());
                 intent.putExtra("image", dessertData.getImage());
                 intent.putExtra("dessert_name", dessertData.getName());
                 intent.putExtra("price", dessertData.getPrice());
